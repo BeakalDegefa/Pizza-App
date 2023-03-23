@@ -57,17 +57,20 @@ function updateCart() {
 
   let summary = document.createElement("p");
   summary.textContent = myPizza.summarize();
-  document.getElementById("cartBox").appendChild(summary);
+  // document.getElementById("cartBox").appendChild(summary);
+  cartBox.appendChild(summary);
 
   let cartContents = document.createElement("ul");
   for (let i = 0; i <cart.items.length; i++) {
     let cartItem = document.createElement("li")
-    cartItem.textContext = cart.items[i].summarize();
+   
+    cartItem.innerText = cart.item[i].summarize();
     cartContents.appendChild(cartItem) 
   }
 
-  document.getElementById("cartContents").innerHTML = ""
-  document.getElementById("cartContents").appendChild(cartContents)
+ 
+cartBox.innerHTML = ""
+cartContents.appendChild(cartContents)
 
   clearPizzaImage();
   clearToppings();
